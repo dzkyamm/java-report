@@ -79,8 +79,6 @@ Enter the number of guidance sessions with Supervisor 2: 5
 Failed! Guidance sessions with Supervisor 1 have not reached 8
 ```
 
-📌 **TARUH FOTO SCREENSHOT OUTPUT DI SINI** — nama file: `images/exp1-output.png`
-
 ![Experiment 1 - Output](images/exp1-output.png)
 
 #### 2.1.3 Test Table
