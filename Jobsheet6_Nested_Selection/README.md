@@ -315,43 +315,61 @@ The program is based on the flowchart created in Exercise 2 of Week 6.
 File: [`code/Task1BookstoreDiscountAttendanceNo.java`](code/Task1BookstoreDiscountAttendanceNo.java)
 
 ```java
-package week6;
 import java.util.Scanner;
-public class BookAssignment {
+
+public class Task1BookstoreDiscountAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Transaction day: ");
-        String purchaseDay = sc.nextLine();
+        System.out.print("Enter day: ");
+        String day = sc.nextLine().trim();
 
-        System.out.print("Book category (dictionary / novel / other): ");
-        String category = sc.nextLine();
+        System.out.print("Enter book type (dictionary / novel / other): ");
+        String type = sc.nextLine().trim();
 
-        System.out.print("Item quantity: ");
-        int itemQuantity = sc.nextInt();
+        System.out.print("Enter total books / quantity: ");
+        int qty = sc.nextInt();
 
-        System.out.print("Unit price: ");
-        double unitPrice = sc.nextDouble();
+        System.out.print("Enter price per book: ");
+        double price = sc.nextDouble();
 
-        double grossTotal = itemQuantity * unitPrice;
-        double discountPercentage = 0.0;
+        double totalPrice = qty * price;
+        double discount = 0;
 
-        if (purchaseDay.equalsIgnoreCase("wednesday")) {
-            if (category.equalsIgnoreCase("dictionary")) {
-                discountPercentage = (itemQuantity > 2) ? 12.0 : 10.0;
-            } else if (category.equalsIgnoreCase("novel")) {
-                discountPercentage = (itemQuantity > 3) ? 5.0 : 0.0;
+        // Level 1: Cek apakah hari Rabu
+        if (day.equalsIgnoreCase("Wednesday")) {
+            // Level 2: Cek jenis buku
+            if (type.equalsIgnoreCase("dictionary")) {
+                // Level 3: Cek jumlah buku dictionary
+                if (qty > 2) {
+                    discount = 12;
+                } else {
+                    discount = 10;
+                }
+            } else if (type.equalsIgnoreCase("novel")) {
+                // Level 3: Cek jumlah buku novel
+                if (qty > 3) {
+                    discount = 9;
+                } else {
+                    discount = 5;
+                }
             } else {
-                discountPercentage = (itemQuantity > 3) ? 9.0 : 8.0;
+                // Level 3: Buku lainnya
+                if (qty > 3) {
+                    discount = 5;
+                } else {
+                    discount = 5;
+                }
             }
+        } else {
+            discount = 0;
         }
 
-        double discountValue = grossTotal * (discountPercentage / 100);
-        double netPayableAmount = grossTotal - discountValue;
+        double discountTotal = totalPrice * (discount / 100);
+        double payTotal = totalPrice - discountTotal;
 
-        System.out.println("Subtotal        : " + grossTotal);
-        System.out.println("Discount (" + discountPercentage + "%) : " + discountValue);
-        System.out.println("Net Amount Due  : " + netPayableAmount);
+        System.out.println("Discount total: " + discountTotal);
+        System.out.println("Pay total: " + payTotal);
 
         sc.close();
     }
