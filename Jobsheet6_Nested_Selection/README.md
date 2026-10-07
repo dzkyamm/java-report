@@ -68,11 +68,7 @@ public class NestedThesisExamAttendanceNo {
 }
 ```
 
-📌 **TARUH FOTO SCREENSHOT KODE DI SINI** — nama file: `images/exp1-code.png`
-
-![Experiment 1 - Code](images/exp1-code.png)
-
-#### 2.1.2 Output Screenshot
+#### 2.1.2 Output
 
 Expected output for the input `yes`, `6`, `5`:
 
