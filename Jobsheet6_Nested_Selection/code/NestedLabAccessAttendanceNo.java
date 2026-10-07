@@ -1,5 +1,5 @@
+package week6;
 import java.util.Scanner;
-
 public class NestedLabAccessAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -9,30 +9,25 @@ public class NestedLabAccessAttendanceNo {
         boolean hasLecturerPermit;
         boolean isLabAssistant;
 
-        System.out.print("Is active student? (true/false): ");
+        System.out.print("Are student is active? (true/false) : ");
         isActiveStudent = sc.nextBoolean();
-
-        System.out.print("Is sanctioned? (true/false): ");
+        System.out.print("Is the student sanctioned? (true/false) : ");
         isSanctioned = sc.nextBoolean();
-
-        System.out.print("Has lecturer permit? (true/false): ");
+        System.out.print("Does the student have lecturer permission? (true/false) : ");
         hasLecturerPermit = sc.nextBoolean();
-
-        System.out.print("Is lab assistant? (true/false): ");
+        System.out.print("Is the student a lab asssistant? (true/false) : ");
         isLabAssistant = sc.nextBoolean();
 
-        // Level 1: student status
         if (isActiveStudent && !isSanctioned) {
-            // Level 2: permission
             if (hasLecturerPermit || isLabAssistant) {
                 System.out.println("Laboratory access granted");
             } else {
-                System.out.println("Access denied: lecturer permission or lab assistant status required");
+                System.out.println("Access denied : Lecturer permission or lab assistant status required");
             }
         } else {
-            System.out.println("Access denied: student status does not meet the requirement");
+            System.out.println("Access denied : student status does not meet the requirement");
         }
-
         sc.close();
     }
+    
 }
