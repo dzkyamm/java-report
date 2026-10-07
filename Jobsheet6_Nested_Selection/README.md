@@ -406,6 +406,8 @@ public class Task2AssistantSelectionAttendanceNo {
 ```
 
 ![Task 2 - Output](images/task2-output.png)
+
+```java
 package week6;
 import java.util.Scanner;
 public class Task1BookstoreDiscountAttendanceNo {
