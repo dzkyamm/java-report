@@ -406,7 +406,59 @@ public class Task2AssistantSelectionAttendanceNo {
 ```
 
 ![Task 2 - Output](images/task2-output.png)
+package week6;
+import java.util.Scanner;
+public class Task1BookstoreDiscountAttendanceNo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Enter day: ");
+        String day = sc.nextLine().trim();
+
+        System.out.print("Enter book type (dictionary / novel / other): ");
+        String type = sc.nextLine().trim();
+
+        System.out.print("Enter total books / quantity: ");
+        int qty = sc.nextInt();
+
+        System.out.print("Enter price per book: ");
+        double price = sc.nextDouble();
+
+        double totalPrice = qty * price;
+        double discount = 0;
+
+        // Level 1: Cek hari Rabu
+        if (day.equalsIgnoreCase("Wednesday")) {
+            // Level 2: Cek jenis buku
+            if (type.equalsIgnoreCase("dictionary")) {
+                if (qty > 2) {
+                    discount = 12;
+                } else {
+                    discount = 10;
+                }
+            } else if (type.equalsIgnoreCase("novel")) {
+                if (qty > 3) {
+                    discount = 9;
+                } else {
+                    discount = 5;
+                }
+            } else {
+                // Buku lainnya (other)
+                discount = 5;
+            }
+        } else {
+            discount = 0;
+        }
+
+        double discountTotal = totalPrice * (discount / 100);
+        double payTotal = totalPrice - discountTotal;
+
+        System.out.println("Discount total: " + discountTotal);
+        System.out.println("Pay total: " + payTotal);
+
+        sc.close();
+    }
+}
 ---
 
 ## 4: CONCLUSION
