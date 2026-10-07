@@ -2,11 +2,10 @@
 
 **Student Identity:**
 
-- **Name:** **[ISI NAMA LENGKAP DI SINI]**
-- **Student ID (NIM):** **[ISI NIM DI SINI]**
-- **Class / Attendance No.:** **[1I / ISI NO ABSEN DI SINI]**
+- **Name:** **[Muhamad Dzaky Ammar Naufal]**
+- **Student ID (NIM):** **[264107020222]**
+- **Class / Attendance No.:** **[1I/21]**
 
-> 📌 **CATATAN:** Semua tulisan bertanda 📌 adalah tempat menaruh foto/screenshot. Simpan gambar di folder `images/` dengan nama file yang tertulis, lalu hapus baris 📌 jika gambar sudah terpasang.
 
 ---
 
