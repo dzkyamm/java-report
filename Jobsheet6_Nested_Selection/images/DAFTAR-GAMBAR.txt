@@ -1,7 +1,0 @@
-Taruh screenshot/flowchart di folder ini dengan nama persis seperti berikut (.png):
-
-exp1-code.png        exp1-output.png
-exp2-code.png        exp2-output.png
-exp3-code.png        exp3-output.png
-task1-flowchart.png  task1-code.png   task1-output.png
-task2-code.png       task2-output.png
