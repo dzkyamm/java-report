@@ -30,25 +30,22 @@ A student wants to register for the thesis exam. The system first checks an admi
 File: [`code/NestedThesisExamAttendanceNo.java`](code/NestedThesisExamAttendanceNo.java)
 
 ```java
+package week6;
 import java.util.Scanner;
-
 public class NestedThesisExamAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         String message;
 
-        System.out.print("Has the student cleared all penalties? (Yes/No): ");
+        System.out.print("Has the student cleared all penalties? (yes/no) : ");
         String noPenalty = sc.nextLine().trim();
-
-        System.out.print("Enter the number of guidance sessions with Supervisor 1: ");
+        System.out.print("Enter the number of guidance sessions with Supervisor 1 : ");
         int guidanceCount1 = sc.nextInt();
-
-        System.out.print("Enter the number of guidance sessions with Supervisor 2: ");
+        System.out.print("Enter the number of guidance sessions with Supervisor 2 : ");
         int guidanceCount2 = sc.nextInt();
 
-        // Level 1: administrative requirement (penalty)
         if (noPenalty.equalsIgnoreCase("Yes")) {
-            // Level 2: guidance log requirement
             if (guidanceCount1 >= 8 && guidanceCount2 >= 4) {
                 message = "All requirements met. The student may register for the thesis exam";
             } else if (guidanceCount1 < 8 && guidanceCount2 < 4) {
@@ -59,13 +56,14 @@ public class NestedThesisExamAttendanceNo {
                 message = "Failed! Guidance sessions with Supervisor 2 have not reached 4";
             }
         } else {
-            message = "Failed! The student still has an outstanding penalty";
+            message = "Failed! Thee student still has an outstanding penalty";
         }
         System.out.println(message);
 
         sc.close();
     }
 }
+    
 ```
 
 #### 2.1.2 Output
@@ -128,8 +126,8 @@ The campus WiFi can only be used by students or lecturers whose accounts are not
 File: [`code/LogicalOperatorWifiAttendanceNo.java`](code/LogicalOperatorWifiAttendanceNo.java)
 
 ```java
+package week6;
 import java.util.Scanner;
-
 public class LogicalOperatorWifiAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -138,16 +136,14 @@ public class LogicalOperatorWifiAttendanceNo {
         boolean isLecturer;
         boolean isBlocked;
 
-        System.out.print("Is the user a student? (true/false): ");
+        System.out.print("Is the user a student? (true/false) : ");
         isStudent = sc.nextBoolean();
-
-        System.out.print("Is the user a lecturer? (true/false): ");
+        System.out.print("Is the user a lecturer? (true/false) : ");
         isLecturer = sc.nextBoolean();
-
-        System.out.print("Is the account currently blocked? (true/false): ");
+        System.out.print("Is the account currently blocked? (true/false) : ");
         isBlocked = sc.nextBoolean();
 
-        if ((isStudent || isLecturer) && !isBlocked) {
+        if ((isStudent || isLecturer) & isBlocked) {
             System.out.println("WiFi access granted");
         } else {
             System.out.println("WiFi access denied");
@@ -156,15 +152,10 @@ public class LogicalOperatorWifiAttendanceNo {
         sc.close();
     }
 }
+
 ```
 
-📌 **TARUH FOTO SCREENSHOT KODE DI SINI** — nama file: `images/exp2-code.png`
-
-![Experiment 2 - Code](images/exp2-code.png)
-
-#### 2.2.2 Output Screenshot
-
-📌 **TARUH FOTO SCREENSHOT OUTPUT DI SINI (4 test, boleh digabung dalam 1 gambar)** — nama file: `images/exp2-output.png`
+#### 2.2.2 Output
 
 ![Experiment 2 - Output](images/exp2-output.png)
 
@@ -215,8 +206,8 @@ A student may use the laboratory outside class hours if their status is active a
 File: [`code/NestedLabAccessAttendanceNo.java`](code/NestedLabAccessAttendanceNo.java)
 
 ```java
+package week6;
 import java.util.Scanner;
-
 public class NestedLabAccessAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -226,42 +217,32 @@ public class NestedLabAccessAttendanceNo {
         boolean hasLecturerPermit;
         boolean isLabAssistant;
 
-        System.out.print("Is active student? (true/false): ");
+        System.out.print("Are student is active? (true/false) : ");
         isActiveStudent = sc.nextBoolean();
-
-        System.out.print("Is sanctioned? (true/false): ");
+        System.out.print("Is the student sanctioned? (true/false) : ");
         isSanctioned = sc.nextBoolean();
-
-        System.out.print("Has lecturer permit? (true/false): ");
+        System.out.print("Does the student have lecturer permission? (true/false) : ");
         hasLecturerPermit = sc.nextBoolean();
-
-        System.out.print("Is lab assistant? (true/false): ");
+        System.out.print("Is the student a lab asssistant? (true/false) : ");
         isLabAssistant = sc.nextBoolean();
 
-        // Level 1: student status
         if (isActiveStudent && !isSanctioned) {
-            // Level 2: permission
             if (hasLecturerPermit || isLabAssistant) {
                 System.out.println("Laboratory access granted");
             } else {
-                System.out.println("Access denied: lecturer permission or lab assistant status required");
+                System.out.println("Access denied : Lecturer permission or lab assistant status required");
             }
         } else {
-            System.out.println("Access denied: student status does not meet the requirement");
+            System.out.println("Access denied : student status does not meet the requirement");
         }
-
         sc.close();
     }
+    
 }
+
 ```
 
-📌 **TARUH FOTO SCREENSHOT KODE DI SINI** — nama file: `images/exp3-code.png`
-
-![Experiment 3 - Code](images/exp3-code.png)
-
-#### 2.3.2 Output Screenshot
-
-📌 **TARUH FOTO SCREENSHOT OUTPUT DI SINI (3 output berbeda, boleh digabung)** — nama file: `images/exp3-output.png`
+#### 2.3.2 Output
 
 ![Experiment 3 - Output](images/exp3-output.png)
 
@@ -315,8 +296,6 @@ All three possible outputs appear at least once.
 
 The program is based on the flowchart created in Exercise 2 of Week 6.
 
-📌 **TARUH FOTO FLOWCHART TOKO BUKU DI SINI** — nama file: `images/task1-flowchart.png`
-
 ![Task 1 - Flowchart](images/task1-flowchart.png)
 
 **Discount rules (applied only on Wednesday):**
@@ -325,87 +304,61 @@ The program is based on the flowchart created in Exercise 2 of Week 6.
 | --- | --- | --- |
 | Dictionary | qty > 2 | 12% |
 | Dictionary | qty ≤ 2 | 10% |
-| Novel | qty > 3 | 5% |
-| Novel | qty ≤ 3 | 0% |
-| Other books | qty > 3 | 9% |
-| Other books | qty ≤ 3 | 8% |
+| Novel | qty > 3 | 9% |
+| Novel | qty ≤ 3 | 5% |
+| Other books | qty > 3 | 5% |
+| Other books | qty ≤ 3 | 5% |
 | Any book | Not Wednesday | 0% |
-
-> ⚠️ **CEK:** Aturan diskon di atas saya ambil dari template. Samakan dengan flowchart kamu. Kalau beda, kirim ke saya dan kode + tabel akan disesuaikan. Hapus catatan ini setelah dicek.
 
 #### 3.1.2 Java Program Code
 
 File: [`code/Task1BookstoreDiscountAttendanceNo.java`](code/Task1BookstoreDiscountAttendanceNo.java)
 
 ```java
+package week6;
 import java.util.Scanner;
-
-public class Task1BookstoreDiscountAttendanceNo {
+public class BookAssignment {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter day: ");
-        String day = sc.nextLine().trim();
+        System.out.print("Transaction day: ");
+        String purchaseDay = sc.nextLine();
 
-        System.out.print("Enter book type (dictionary / novel / other): ");
-        String type = sc.nextLine().trim();
+        System.out.print("Book category (dictionary / novel / other): ");
+        String category = sc.nextLine();
 
-        System.out.print("Enter quantity: ");
-        int qty = sc.nextInt();
+        System.out.print("Item quantity: ");
+        int itemQuantity = sc.nextInt();
 
-        System.out.print("Enter price per book: ");
-        double price = sc.nextDouble();
+        System.out.print("Unit price: ");
+        double unitPrice = sc.nextDouble();
 
-        double totalPrice = qty * price;
-        double discount = 0;
+        double grossTotal = itemQuantity * unitPrice;
+        double discountPercentage = 0.0;
 
-        // Level 1: discount only applies on Wednesday
-        if (day.equalsIgnoreCase("Wednesday")) {
-            // Level 2: book type
-            if (type.equalsIgnoreCase("dictionary")) {
-                // Level 3: quantity
-                if (qty > 2) {
-                    discount = 12;
-                } else {
-                    discount = 10;
-                }
-            } else if (type.equalsIgnoreCase("novel")) {
-                if (qty > 3) {
-                    discount = 5;
-                } else {
-                    discount = 0;
-                }
-            } else { // other books
-                if (qty > 3) {
-                    discount = 9;
-                } else {
-                    discount = 8;
-                }
+        if (purchaseDay.equalsIgnoreCase("wednesday")) {
+            if (category.equalsIgnoreCase("dictionary")) {
+                discountPercentage = (itemQuantity > 2) ? 12.0 : 10.0;
+            } else if (category.equalsIgnoreCase("novel")) {
+                discountPercentage = (itemQuantity > 3) ? 5.0 : 0.0;
+            } else {
+                discountPercentage = (itemQuantity > 3) ? 9.0 : 8.0;
             }
-        } else {
-            discount = 0;
         }
 
-        double discountAmount = totalPrice * (discount / 100);
-        double totalPay = totalPrice - discountAmount;
+        double discountValue = grossTotal * (discountPercentage / 100);
+        double netPayableAmount = grossTotal - discountValue;
 
-        System.out.println("-----------------------------");
-        System.out.println("Total price    : " + totalPrice);
-        System.out.println("Discount (" + discount + "%): " + discountAmount);
-        System.out.println("Total to pay   : " + totalPay);
+        System.out.println("Subtotal        : " + grossTotal);
+        System.out.println("Discount (" + discountPercentage + "%) : " + discountValue);
+        System.out.println("Net Amount Due  : " + netPayableAmount);
 
         sc.close();
     }
 }
 ```
 
-📌 **TARUH FOTO SCREENSHOT KODE DI SINI** — nama file: `images/task1-code.png`
-
-![Task 1 - Code](images/task1-code.png)
-
-#### 3.1.3 Output Screenshot
-
-📌 **TARUH FOTO SCREENSHOT OUTPUT DI SINI** — nama file: `images/task1-output.png`
+#### 3.1.3 Output
 
 ![Task 1 - Output](images/task1-output.png)
 
@@ -415,10 +368,10 @@ public class Task1BookstoreDiscountAttendanceNo {
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Wednesday | dictionary | 3 | 12% | 18,000 | 132,000 |
 | 2 | Wednesday | dictionary | 2 | 10% | 10,000 | 90,000 |
-| 3 | Wednesday | novel | 4 | 5% | 10,000 | 190,000 |
-| 4 | Wednesday | novel | 3 | 0% | 0 | 150,000 |
-| 5 | Wednesday | other | 4 | 9% | 18,000 | 182,000 |
-| 6 | Wednesday | other | 2 | 8% | 8,000 | 92,000 |
+| 3 | Wednesday | novel | 4 | 9% | 18,000 | 182,000 |
+| 4 | Wednesday | novel | 3 | 5% | 7,500 | 142,500 |
+| 5 | Wednesday | other | 4 | 5% | 10,000 | 190,000 |
+| 6 | Wednesday | other | 2 | 5% | 5,000 | 95,000 |
 | 7 | Monday | dictionary | 3 | 0% | 0 | 150,000 |
 
 #### 3.1.5 Analysis
@@ -441,50 +394,49 @@ The program has three levels of nesting. The first level checks the day, the sec
 File: [`code/Task2AssistantSelectionAttendanceNo.java`](code/Task2AssistantSelectionAttendanceNo.java)
 
 ```java
+package week6;
+
 import java.util.Scanner;
 
 public class Task2AssistantSelectionAttendanceNo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Is the student active? (yes/no): ");
+        System.out.print("Is student active? (yes/no): ");
         boolean active = sc.nextLine().trim().equalsIgnoreCase("yes");
 
-        System.out.print("Is the student under academic sanction? (yes/no): ");
+        System.out.print("Is student under academic sanction? (yes/no): ");
         boolean sanction = sc.nextLine().trim().equalsIgnoreCase("yes");
 
-        System.out.print("Basic Programming grade: ");
-        double grade = sc.nextDouble();
-        sc.nextLine(); // clear the buffer after nextDouble()
-
-        System.out.print("Has programming competency certificate? (yes/no): ");
-        boolean certificate = sc.nextLine().trim().equalsIgnoreCase("yes");
-
-        // Stage 1: status
+        // Level 1: Check active status and sanction
         if (active && !sanction) {
-            // Stage 2: competency
-            if (grade >= 80 || certificate) {
-                System.out.println("Stage 1 & 2 passed. Student is called for an interview.");
-                System.out.print("Enter interview score: ");
-                double interview = sc.nextDouble();
+            System.out.print("Enter Basic Programming grade: ");
+            double grade = sc.nextDouble();
 
-                // Stage 3: interview
-                if (interview >= 75) {
-                    System.out.println("RESULT: ACCEPTED as lab assistant.");
+            System.out.print("Does student have a programming competency certificate? (true/false): ");
+            boolean hasCertificate = sc.nextBoolean();
+
+            // Level 2: Check academic qualification
+            if (grade >= 80 || hasCertificate) {
+                System.out.print("Enter interview score: ");
+                double interviewScore = sc.nextDouble();
+
+                // Level 3: Check interview score
+                if (interviewScore >= 75) {
+                    System.out.println("Accepted as a Lab Assistant!");
                 } else {
-                    System.out.println("RESULT: NOT ACCEPTED. Reason: interview score is below 75.");
+                    System.out.println("Failed! Interview score is below 75.");
                 }
+
             } else {
-                System.out.println("RESULT: NOT ACCEPTED. Reason: Basic Programming grade is below 80 "
-                        + "and the student has no programming competency certificate.");
+                System.out.println("Failed! Basic Programming grade is below 80 and no certificate provided.");
             }
+
         } else {
-            if (!active && sanction) {
-                System.out.println("RESULT: NOT ACCEPTED. Reason: student is not active and is under academic sanction.");
-            } else if (!active) {
-                System.out.println("RESULT: NOT ACCEPTED. Reason: student is not active.");
+            if (!active) {
+                System.out.println("Failed! Student status is not active.");
             } else {
-                System.out.println("RESULT: NOT ACCEPTED. Reason: student is under academic sanction.");
+                System.out.println("Failed! Student is currently under academic sanction.");
             }
         }
 
@@ -493,31 +445,7 @@ public class Task2AssistantSelectionAttendanceNo {
 }
 ```
 
-📌 **TARUH FOTO SCREENSHOT KODE DI SINI** — nama file: `images/task2-code.png`
-
-![Task 2 - Code](images/task2-code.png)
-
-#### 3.2.3 Output Screenshot
-
-📌 **TARUH FOTO SCREENSHOT OUTPUT DI SINI** — nama file: `images/task2-output.png`
-
 ![Task 2 - Output](images/task2-output.png)
-
-#### 3.2.4 Test Table
-
-| **No** | **Active** | **Sanction** | **Grade** | **Certificate** | **Interview** | **Result** |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | yes | no | 85 | no | 80 | ACCEPTED as lab assistant |
-| 2 | yes | no | 70 | yes | 75 | ACCEPTED as lab assistant |
-| 3 | yes | no | 85 | no | 60 | NOT ACCEPTED: interview score is below 75 |
-| 4 | yes | no | 70 | no | - | NOT ACCEPTED: grade below 80 and no certificate |
-| 5 | no | no | 90 | yes | - | NOT ACCEPTED: student is not active |
-| 6 | yes | yes | 90 | yes | - | NOT ACCEPTED: student is under academic sanction |
-| 7 | no | yes | 90 | yes | - | NOT ACCEPTED: not active and under academic sanction |
-
-#### 3.2.5 Analysis
-
-The selection has three stages, and each stage is an `if` nested inside the previous one. A student reaches the next stage only after passing the previous one. Stage 1 uses `&&` with `!` (`active && !sanction`) and Stage 2 uses `||` (`grade >= 80 || certificate`). The interview score is only asked for students who pass Stages 1 and 2. Every `else` prints a specific reason, so the user knows exactly why a candidate failed.
 
 ---
 
