@@ -407,6 +407,8 @@ public class Task2AssistantSelectionAttendanceNo {
 
 ![Task 2 - Output](images/task2-output.png)
 
+### 3.2.3 Java Program Code (Task 1: Bookstore Discount System)
+
 ```java
 package week6;
 import java.util.Scanner;
