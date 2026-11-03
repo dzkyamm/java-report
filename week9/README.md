@@ -155,9 +155,6 @@ public class SiakadWhileAttendance21 {
   (images/output2.png)
     This message will only appear when the student's score is in the A range.
 
-* **Question 5:** Commit and push the program code to GitHub.
-  * **Answer:** This is a practical instruction. After the program is completed and tested, save the changes with a Git commit and push them to the GitHub repository.
-
 ---
 
 ### 2.3 Experiment 3: Café Transaction Case Study – DO-WHILE Loop
@@ -206,12 +203,9 @@ public class CafeDoWhileAttendance21 {
 
 ```
 
-#### 2.3.2 Program Output / Screenshot
+#### 2.3.2 Program Output
 
-The following is the program output after execution:
-
-<!-- Screenshot: Show at least two customer transactions, their quantities and total payments, followed by the cancel command and the program termination message. -->
-![Output Experiment 3](images/experiment3.png)
+![Output Experiment 3](images/output3.png)
 
 #### 2.3.3 Answers to Questions / Reflection Questions
 
@@ -288,11 +282,10 @@ public class CinemaTicketsAssignment1 {
 }
 ```
 
-#### 3.1.2 Program Output / Screenshot
+#### 3.1.2 Program Output
 
 The following is the program output after execution:
 
-<!-- Screenshot: Show ticket quantity input, rejection and re-entry of a negative quantity if tested, discount calculation, total tickets sold, and total sales revenue. -->
 ![Output Assignment 1](images/assignment1.png)
 
 ---
@@ -353,17 +346,14 @@ public class FeeParking {
 
 ```
 
-#### 3.2.2 Program Output / Screenshot
+#### 3.2.2 Program Output
 
-The following is the program output after execution:
-
-<!-- Screenshot: Show vehicle type and parking duration inputs, the calculated parking fee for each vehicle, and entering 0 to stop the program. -->
 ![Output Assignment 2](images/assignment2.png)
 
 ---
 
 ## 4: CONCLUSION
 
-In this jobsheet, I learned how to use `for`, `while`, and `do-while` loops in Java. A `for` loop is useful when the number of repetitions is known. A `while` loop repeats while its condition is true, while a `do-while` loop always executes its body at least once before checking the condition.
+The `for`, `while`, and `do-while` loops in Java support different repetition patterns. A `for` loop is suitable when the number of iterations is known, a `while` loop repeats based on a condition, and a `do-while` loop executes its body at least once before checking the condition.
 
-I also learned how to use loop counters, compare values, validate user input, and control a loop with `continue` and `break`. These concepts can be used to solve practical problems, such as finding the highest and lowest student scores, determining letter grades, processing café transactions, calculating ticket sales, and calculating parking fees.
+Loop counters, score comparisons, input validation, and control statements such as `continue` and `break` allow programs to process student data, transactions, ticket sales, and parking fees correctly.
