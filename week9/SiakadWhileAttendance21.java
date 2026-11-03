@@ -21,6 +21,7 @@ public class SiakadWhileAttendance21 {
             }
             if (score > 88 && score <= 100) {
                 System.out.println("The grade of student " + (i + 1) + " is A");
+                System.out.println("Well done, keep up the good work!");
             } else if (score > 73 && score <= 100) {
                 System.out.println("The grade of student " + (i + 1) + " is B+");
             } else if (score > 65 && score <= 73) {
