@@ -375,12 +375,3 @@ The following is the program output after execution:
 In this jobsheet, I learned how to use `for`, `while`, and `do-while` loops in Java. A `for` loop is useful when the number of repetitions is known. A `while` loop repeats while its condition is true, while a `do-while` loop always executes its body at least once before checking the condition.
 
 I also learned how to use loop counters, compare values, validate user input, and control a loop with `continue` and `break`. These concepts can be used to solve practical problems, such as finding the highest and lowest student scores, determining letter grades, processing café transactions, calculating ticket sales, and calculating parking fees.
-
-Overall, this jobsheet helped me understand how loops work and how to use them to handle repeated tasks in Java.
-
----
-
-## 5: REFERENCES
-
-1. Politeknik Negeri Malang, *Programming Fundamentals 2026 – Jobsheet 7: Loops 1*, pages 1–8.
-2. `README (1).md` provided as the reference for the report structure and Markdown format.
