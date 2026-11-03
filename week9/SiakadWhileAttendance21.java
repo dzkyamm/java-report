@@ -35,8 +35,6 @@ public class SiakadWhileAttendance21 {
                 System.out.println("The grade of student " + (i + 1) + " is E");
             }
             i++;
-
-            sc.close();
         }
     }
 }

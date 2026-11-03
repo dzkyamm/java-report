@@ -54,12 +54,9 @@ public class SiakadForAttendance21 {
 
 ```
 
-#### 2.1.2 Program Output / Screenshot
+#### 2.1.2 Program Output
 
-The following is the program output after execution:
-
-<!-- Screenshot: Show the program input for all 10 students and the final highest and lowest scores. -->
-![Output Experiment 1](images/experiment1.png)
+![Output Experiment 1](images/output1.png)
 
 #### 2.1.3 Answers to Questions / Reflection Questions
 
@@ -135,12 +132,9 @@ public class SiakadWhileAttendance21 {
 }
 ```
 
-#### 2.2.2 Program Output / Screenshot
+#### 2.2.2 Program Output
 
-The following is the program output after execution:
-
-<!-- Screenshot: Show the number of students, score inputs, invalid-score validation, and the letter grades displayed by the program. -->
-![Output Experiment 2](images/experiment2.png)
+![Output Experiment 2](images/output2.png)
 
 #### 2.2.3 Answers to Questions / Reflection Questions
 
