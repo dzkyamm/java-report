@@ -26,13 +26,39 @@ This experiment uses a `for` loop to input the quiz scores of 10 students. The p
 #### 2.1.1 Java Program Code
 
 ```java
-// Insert your Java program code here
+package week9;
+import java.util.Scanner;
+public class SiakadForAttendance21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double score, highest = 0, lowest = 100;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Enter score for student " + i + ": ");
+            score = sc.nextDouble();
+            if (score > highest) {
+                highest = score;
+            }
+            if (score < lowest) {
+                lowest = score;
+            }
+        }
+         
+        System.out.println("Highest score : " + highest);
+        System.out.println("Lowest score : " + lowest);
+
+        sc.close();
+    }
+}
+
 ```
 
 #### 2.1.2 Program Output / Screenshot
 
 The following is the program output after execution:
 
+<!-- Screenshot: Show the program input for all 10 students and the final highest and lowest scores. -->
 ![Output Experiment 1](images/experiment1.png)
 
 #### 2.1.3 Answers to Questions / Reflection Questions
@@ -65,13 +91,55 @@ This experiment uses a `while` loop to process scores for a number of students e
 #### 2.2.1 Java Program Code
 
 ```java
-// Insert your Java program code here
+package week9;
+import java.util.Scanner;
+public class SiakadWhileAttendance21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int studentCount;
+        int score;
+        int i = 0;
+
+        System.out.print("Enter the number of students : ");
+        studentCount = sc.nextInt();
+
+        while (i < studentCount) {
+            System.out.print("Enter score for student " + (i + 1) + ": ");
+            score = sc.nextInt();
+
+            if (score < 0 || score > 100) {
+                System.out.println("Invalid score. Please enter a valid score!");
+                continue;
+            }
+            if (score > 88 && score <= 100) {
+                System.out.println("The grade of student " + (i + 1) + " is A");
+            } else if (score > 73 && score <= 100) {
+                System.out.println("The grade of student " + (i + 1) + " is B+");
+            } else if (score > 65 && score <= 73) {
+                System.out.println("The grade of student " + (i + 1) + " is B");
+            } else if (score > 60 && score <= 65) {
+                System.out.println("The grade of student " + (i + 1) + " is C+");
+            } else if (score > 50 && score <= 60) {
+                System.out.println("The grade of student " + (i + 1) + " is C");
+            } else if (score > 39 && score <= 50) {
+                System.out.println("The grade of student " + (i + 1) + " is D");
+            } else {
+                System.out.println("The grade of student " + (i + 1) + " is E");
+            }
+            i++;
+
+            sc.close();
+        }
+    }
+}
 ```
 
 #### 2.2.2 Program Output / Screenshot
 
 The following is the program output after execution:
 
+<!-- Screenshot: Show the number of students, score inputs, invalid-score validation, and the letter grades displayed by the program. -->
 ![Output Experiment 2](images/experiment2.png)
 
 #### 2.2.3 Answers to Questions / Reflection Questions
@@ -107,13 +175,50 @@ This experiment uses a `do-while` loop to process café transactions. The progra
 #### 2.3.1 Java Program Code
 
 ```java
-// Insert your Java program code here
+package week9;
+import java.util.Scanner;
+public class CafeDoWhileAttendance21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int coffee, tea, bread;
+        int coffeePrice = 12000, teaPrice = 7000, breadPrice = 20000;
+        int totalPrice;
+        String customerName;
+
+        do {
+            System.out.print("Enter customer name (type 'cancel' to exit): ");
+            customerName = sc.nextLine();
+
+            if (customerName.equalsIgnoreCase("cancel")) {
+                System.out.println("Transaction canceled.");
+                break;
+            }
+
+            System.out.print("Coffee quantity: ");
+            coffee = sc.nextInt();
+            System.out.print("Tea quantity: ");
+            tea = sc.nextInt();
+            System.out.print("Bread quantity: ");
+            bread = sc.nextInt();
+            totalPrice = (coffee * coffeePrice) + (tea * teaPrice) + (bread * breadPrice);
+            System.out.println("Total amount to pay: Rp " + totalPrice);
+            sc.nextLine();
+        } while (true);
+
+        System.out.println("All transactions completed.");
+
+        sc.close();
+    }
+}
+
 ```
 
 #### 2.3.2 Program Output / Screenshot
 
 The following is the program output after execution:
 
+<!-- Screenshot: Show at least two customer transactions, their quantities and total payments, followed by the cancel command and the program termination message. -->
 ![Output Experiment 3](images/experiment3.png)
 
 #### 2.3.3 Answers to Questions / Reflection Questions
@@ -143,13 +248,59 @@ The program calculates the total number of tickets sold and the total ticket sal
 #### 3.1.1 Java Program Code
 
 ```java
-// Insert your Java program code here
+package week9;
+import java.util.Scanner;
+public class CinemaTicketsAssignment1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double ticketPrice = 50000;
+
+        //input
+        while (true) {
+            System.out.print("Total ticket purchased (type '0' to cancel) : ");
+            int ticketTotal = sc.nextInt();
+
+            if (ticketTotal == 0) {
+                System.out.println("Canceled.");
+                break;
+            } if (ticketTotal < 0) {
+                System.out.println("invalid input, dont input less than 0!");
+                continue;
+            }
+        
+            double discount = 0;
+
+            
+
+            if (ticketTotal >4 && ticketTotal <= 10) {
+                discount = 0.1;
+            } if (ticketTotal > 10) {
+                discount = 0.15;
+            }
+
+            //calculation
+            double totalPrice = ticketPrice * ticketTotal;
+            double discountAmount = ticketPrice * discount * ticketTotal;
+            double total = totalPrice - discountAmount;
+
+            //output
+            System.out.println("=====Ticket Transactions=====");
+            System.out.println("Ticket sold : " + ticketTotal);
+            System.out.println("Discount : " + discount);
+            System.out.println("Total revenue : " + (int) total);
+            System.out.println("=============================");
+        }
+        sc.close();
+    }
+}
 ```
 
 #### 3.1.2 Program Output / Screenshot
 
 The following is the program output after execution:
 
+<!-- Screenshot: Show ticket quantity input, rejection and re-entry of a negative quantity if tested, discount calculation, total tickets sold, and total sales revenue. -->
 ![Output Assignment 1](images/assignment1.png)
 
 ---
@@ -161,13 +312,60 @@ The program calculates parking fees for several vehicles. The rate is Rp 3,000 p
 #### 3.2.1 Java Program Code
 
 ```java
-// Insert your Java program code here
+package week9;
+import java.util.Scanner;
+public class FeeParking {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int type;
+        int duration = 0;
+        int total = 0;
+
+        do {
+            System.out.print("Type '1' for Car \nType '2' for Motorcycle \nType '0' to exit \nInput vehicle type (input number) : ");
+            type = sc.nextInt();
+            if (type == 1 || type == 2) {
+                System.out.print("Input duration (hours) : ");
+                duration = sc.nextInt();
+            } if (type == 1) {
+                total = duration * 3000;
+            } else if (type == 2) {
+                total = duration * 2000;
+            }
+
+        if (type == 1) {
+            System.out.println("====Total Parking Cost====");
+            System.out.println("Vehicle type : Car");
+            System.out.println("Duration : " + duration);
+            System.out.println("Total cost : " + total);
+            System.out.println("==========================");
+        }
+
+        if (type == 2) {
+            System.out.println("====Total Parking Cost====");
+            System.out.println("Vehicle type : Motorcycle");
+            System.out.println("Duration : " + duration);
+            System.out.println("Total cost : " + total);
+            System.out.println("==========================");
+        }
+        
+        } while (type != 0); 
+        System.out.println("Exit.");
+
+        sc.close();
+
+
+    }
+}
+
 ```
 
 #### 3.2.2 Program Output / Screenshot
 
 The following is the program output after execution:
 
+<!-- Screenshot: Show vehicle type and parking duration inputs, the calculated parking fee for each vehicle, and entering 0 to stop the program. -->
 ![Output Assignment 2](images/assignment2.png)
 
 ---
