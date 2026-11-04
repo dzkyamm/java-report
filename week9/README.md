@@ -151,9 +151,14 @@ public class SiakadWhileAttendance21 {
   * **Answer:** The loop processes **19 valid student scores**. If an invalid score is entered, `continue` makes the program ask for that student's score again, so the loop body may execute more than 19 times in total.
 
 * **Question 4:** Modify the program so that, if a student receives grade A, the program displays an additional message “Well done, keep up the good work!”
-  * **Answer:** 
-  (images/output2.png)
-    This message will only appear when the student's score is in the A range.
+  * **Answer:** Add a second `System.out.println` inside the `if` block for grade A, so the message is only displayed when the score is in the A range:
+
+    ```java
+    if (score > 88 && score <= 100) {
+        System.out.println("The grade of student " + (i + 1) + " is A");
+        System.out.println("Well done, keep up the good work!");
+    }
+    ```
 
 ---
 

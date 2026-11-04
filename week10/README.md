@@ -155,18 +155,31 @@ changing the loops into `for` loops.
 
 #### 2.3.1 Java Program Code
 
-The program reads a positive integer `n`. The outer `while` loop
-controls the rows, while the inner `while` loop prints the stars in each
-row. The value of `j` must be reset to 0 whenever a new row begins. A
-line break is needed after the inner loop finishes.
+```java
+import java.util.Scanner;
+public class Triangle21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-For the inverted triangle, the outer loop starts from `i = n` and
-decreases its value until it reaches 1. The inner loop prints the number
-of stars equal to the current value of `i`.
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
 
-// Masukkan kode program Java Anda di sini (TriangleStudentNo.java)
+        int i = 0;
+        while (i <= n) {
+            System.out.print("[i=" + i + "] ");
+            int j = 0;
+            while (j <i) {
+                System.out.print("*");
+                j++;
+            }
+            i++;
+        }
+        sc.close();
+    }
+}
+```
 
-#### 2.3.2 Program Output / Screenshot
+#### 2.3.2 Program Output
 
 For `n = 5`, the first triangle should contain 5 rows:
 
@@ -209,12 +222,6 @@ in the first row, decreasing to 1 star in the last row.
     -   **Answer:** The outer loop must start from `i = n`, use the
         condition `i >= 1`, and decrease `i` by 1 after each row using
         `i--`. This makes the number of stars decrease from `n` to 1.
--   **Question 4:** Commit and push the completed program to GitHub.
-    -   **Answer:** This is a practical instruction. After the normal
-        and inverted triangles are displayed correctly and the temporary
-        debug statements are removed, commit and push the program to
-        GitHub.
-
 ------------------------------------------------------------------------
 
 ### 2.4 Experiment 4: Case Study of Group Project Scores
@@ -238,7 +245,7 @@ highest average.
 
 // Masukkan kode program Java Anda di sini (GroupScoreStudentNo.java)
 
-#### 2.4.2 Program Output / Screenshot
+#### 2.4.2 Program Output
 
 The program is tested with 3 groups and 2 graders. One invalid score,
 such as 105, is entered to test the validation. The program should
@@ -293,10 +300,6 @@ The result is Group 3 with the highest average of 93.0.
             grader.
         3.  **Inner `do-while` loop:** Repeats the score input when the
             entered score is invalid.
--   **Question 6:** Commit and push the program code to GitHub.
-    -   **Answer:** This is a practical instruction. After the program
-        is completed and tested, commit and push it to the
-        `daspro-jobsheet8` repository.
 
 ------------------------------------------------------------------------
 
@@ -331,7 +334,29 @@ the inner loop prints numbers from 1 up to the current row number. A
 counter can be used to calculate the total number of values printed.
 
 ```java
-// Masukkan kode program Java Anda di sini (Task1StudentNo.java)
+import java.util.Scanner;
+public class task1_21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
+
+        int totalDigits = 0;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+                totalDigits++;
+            }
+            System.out.println();
+        }
+
+        System.out.println("Total numbers printed: " + totalDigits);
+
+        sc.close();
+    }
+}
 ```
 
 #### 3.1.2 Program Output / Screenshot
@@ -340,8 +365,6 @@ The output should show the number pattern and the final message:
 
 `Total numbers printed: 15`
 
-// Tempatkan tangkapan layar di sini: kode Java di editor yang menampilkan Task1StudentNo.java.
-// Tempatkan tangkapan layar di sini: output terminal untuk n = 5 yang menampilkan pola angka dari 1 sampai 5 dan Total numbers printed: 15.
 
 ------------------------------------------------------------------------
 
