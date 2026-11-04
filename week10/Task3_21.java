@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Task3_21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -6,43 +7,56 @@ public class Task3_21 {
         System.out.print("Enter the number of stores: ");
         int numStores = sc.nextInt();
 
-        if (numStores <= 0) {
+        if (numStores < 1) {
             System.out.println("Number of stores must be at least 1.");
-            sc.close();
-            return;
-        }
+        } else {
+            int storeNo = 1;
+            int totalItemsAll = 0;
+            int highestItems = -1;
+            int bestStore = 0;
 
-        int totalItemsAllStores = 0;
-        int maxItems = -1;
-        int bestStore = 0;
+            while (storeNo <= numStores) {
+                System.out.println("Store " + storeNo);
 
-        for (int i = 1; i <= numStores; i++) {
-            System.out.println("Store " + i);
-            System.out.print("Enter the number of customers: ");
-            int numCustomers = sc.nextInt();
+                int numCustomers;
+                do {
+                    System.out.print("  Number of customers: ");
+                    numCustomers = sc.nextInt();
+                    if (numCustomers < 0) {
+                        System.out.println("  Must not be negative. Retry!");
+                    }
+                } while (numCustomers < 0);
 
-            int totalItemsStore = 0;
+                int totalItems = 0;
 
-            for (int j = 1; j <= numCustomers; j++) {
-                System.out.print("Enter items bought by customer " + j + ": ");
-                int items = sc.nextInt();
-                totalItemsStore += items;
+                for (int c = 1; c <= numCustomers; c++) {
+                    int items;
+                    do {
+                        System.out.print("  Items bought by customer " + c + ": ");
+                        items = sc.nextInt();
+                        if (items < 0) {
+                            System.out.println("  Must not be negative. Retry!");
+                        }
+                    } while (items < 0);
+                    totalItems += items;
+                }
+
+                System.out.println("Store " + storeNo + " - customers: " + numCustomers
+                        + ", total items: " + totalItems);
+
+                totalItemsAll += totalItems;
+
+                if (totalItems > highestItems) {
+                    highestItems = totalItems;
+                    bestStore = storeNo;
+                }
+
+                storeNo++;
             }
 
-            System.out.println("Store " + i + " customers: " + numCustomers + ", total items: " + totalItemsStore);
-
-            totalItemsAllStores += totalItemsStore;
-
-            if (totalItemsStore > maxItems) {
-                maxItems = totalItemsStore;
-                bestStore = i;
-            }
+            System.out.println("Total items across all stores: " + totalItemsAll);
+            System.out.println("Store with the most items: " + bestStore);
         }
-
-        System.out.println("----------------------------------------");
-        System.out.println("Total items across all stores: " + totalItemsAllStores);
-        System.out.println("Store with the most items: " + bestStore);
-
         sc.close();
     }
 }

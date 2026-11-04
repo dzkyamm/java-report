@@ -1,8 +1,8 @@
 import java.util.Scanner;
-public class task1_21 {
+
+public class Task1_21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter the value of n = ");
         int n = sc.nextInt();
 
@@ -17,7 +17,6 @@ public class task1_21 {
         }
 
         System.out.println("Total numbers printed: " + totalDigits);
-
         sc.close();
     }
 }
